@@ -1,0 +1,16 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+}
+
+#page-title {
+  font-family: 'Bungee', cursive;
+ }
+
+ nav {
+  display: flex;
+  justify-content: space-between;
+ }
