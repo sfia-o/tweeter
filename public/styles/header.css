@@ -1,0 +1,25 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #c60b0bc9;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.profile-pic {
+  padding-top: 100px;
+  height: auto;
+}
+
+.username {
+  color: aliceblue;
+  padding-bottom: 60px;
+}
+
+h2 {
+  font-weight: normal;
+}

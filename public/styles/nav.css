@@ -5,6 +5,7 @@ nav {
   color: #FFFFFF;
   padding: 1.5em;
   position: fixed;
+  top: 0;
 }
 
 #page-title {
