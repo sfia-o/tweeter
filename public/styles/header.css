@@ -1,8 +1,8 @@
 .profile {
   height: 400px;
   width: 100%;
-  background-color: #c60b0bc9;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-color: #cdd7f7;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,16 +10,20 @@
   padding: 50px;
 }
 
-.profile-pic {
+.profile-pic img{
   padding-top: 100px;
-  height: auto;
+  margin-top: 200px;
+  height: 500px;
 }
 
-.username {
-  color: aliceblue;
-  padding-bottom: 60px;
+.user {
+  height: 100px;
+  display: flex;
+  justify-content: center;  
 }
 
 h2 {
   font-weight: normal;
+  color: #545149;
+  font-size: 250%;
 }
