@@ -13,11 +13,11 @@ $(document).ready(function() {
 
     //condition to change text color to red when charCount is negative
     if (charCount < 0) {
-      $output.css('color', 'red');
+      $output.css('color', '#c60b0bc9');
     }
 
   }
-  
+
   //create event handler for input event on textarea
   $textarea.on('input', function() {
     textLength = $(this).val().length;
