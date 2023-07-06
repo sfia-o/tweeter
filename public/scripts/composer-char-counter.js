@@ -15,8 +15,7 @@ $(document).ready(function() {
     if (charCount < 0) {
       $output.css('color', '#c60b0bc9');
     }
-
-  }
+  };
 
   //create event handler for input event on textarea
   $textarea.on('input', function() {
