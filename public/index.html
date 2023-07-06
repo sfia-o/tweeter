@@ -35,6 +35,10 @@
      <!-- Character Count -->
     <script src="./scripts/composer-char-counter.js"></script>
 
+    <!--Tweet Css-->
+
+    <link rel="stylesheet" href="./styles/tweet.css"></script>
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
@@ -77,25 +81,24 @@
       </section>
 
       <article class="tweet">
-          <header>
-            <img src="" alt="profile picture"/>
-            <h4>Newton</h4>
-            <h4>@Sirlssac</h4>
+          <header class="user">
+            <div class="user-profile">
+              <i class="fa-thin fa-user-robot" style="color: #7b776a;"></i>
+              <h4 class="name">Newton</h4>
+            </div>
+            <h4 class="username">@Sirlssac</h4>
           </header>
 
-          <p>Tweet message</p>
+          <p class="message">Tweet! Chirp chirpalop tweet tweet ! 🐦</p>
 
           <footer>
             <small>10 days ago</small>
-            <a href="#" class="icon-button">
-              <span class="flag"></span>
-            </a>
-            <a href="#" class="icon-button">
-              <span class="refresh"></span>
-            </a>
-            <a href="#" class="icon-button">
-              <span class="like"></span>
-            </a>
+            
+            <div class="icons">
+            <i class="fa-solid fa-flag" style="color: #4056A1"></i>
+            <i class="fa-solid fa-retweet" style="color: #4056A1"></i>
+            <i class="fa-solid fa-heart" style="color: #4056A1" ></i>
+            </div>
           </footer>
       </article>
 
