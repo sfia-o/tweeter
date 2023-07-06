@@ -39,5 +39,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   background-color: #f4f1ec;
+  margin-top: 400px;
+  padding-top: 0;
  }
 
