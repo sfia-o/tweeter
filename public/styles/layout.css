@@ -31,7 +31,7 @@ body {
 
 
 
- .container {
+ #container {
   width: 90%;
   height: 600px;
   display: flex;
