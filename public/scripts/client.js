@@ -140,8 +140,25 @@ $(document).ready(function() {
 
       const $form = $('.form')
 
-      $form.on('submit', function(){
+      $form.on('submit', function(event){
+
+        //prevent default action
         event.preventDefault();
+
+        //create a variable to store the query string
+        const tweetText = $(this).serialize();
+        
+        //post request
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost:8080/tweets',
+          data: tweetText,
+          success: function(response) {
+            console.log(tweetText);
+          }
+        });
+
+     
       })
 
     });
