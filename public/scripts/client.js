@@ -138,6 +138,12 @@ $(document).ready(function() {
           }
           );
 
+      const $form = $('.form')
+
+      $form.on('submit', function(){
+        event.preventDefault();
+      })
+
     });
     
     
