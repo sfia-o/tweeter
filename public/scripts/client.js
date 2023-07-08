@@ -25,6 +25,7 @@ $(document).ready(function() {
   
   const createTweetElement = function(tweetData) {
     
+    //html markup
     const $tweet = $(`
     <article class="tweet">
     <header>
@@ -97,8 +98,11 @@ $(document).ready(function() {
       
       const renderTweets = function(tweets) {
         
+        //loop through array
         for (const tweet of tweets) {
+          //pass each obj element through createTweetElement and assign it to variable
           const $tweetElement = createTweetElement(tweet);
+          //append variable to #tweet-list html container
           $("#tweet-list").append($tweetElement);
         }
       }
