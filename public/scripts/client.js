@@ -52,39 +52,92 @@ $(document).ready(function() {
     return $tweet;
   };
   
-  const $tweetElement = createTweetElement(tweetData);
-  $('#tweet-list').append($tweetElement);
+  
   
   /**
-   * Hover over tweet article and icons effect
-   */
-  
-  //select elements
-  const $tweetContainer = $('article');
-  const $tweetIcons = $('.icons i');
-  
-  //hover event handler for tweet article container
-  $tweetContainer.hover(
-    function() {
-      $(this).css('box-shadow', '4px 4px 4px');
+   * Render tweets
+  */
+ 
+ const data = [
+   {
+     "user": {
+       "name": "Newton",
+       "avatars": "./images/newton.png"
+       ,
+       "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    function() {
-      $(this).css('box-shadow', 'none');
-    }
-  );
-  
-  //hover event handler for icons
-  $tweetIcons.hover(
-    function() {
-      $(this).css('color', '#D4A82A');
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "./images/descartes.png",
+        "handle": "@rd" },
+        "content": {
+          "text": "Je pense , donc je suis"
+        },
+        "created_at": 1461113959088
     },
-    function() {
-      $(this).css('color', '#4056A1');
-    }
-  );
-  
-});
+    {
+      "user": {
+        "name": "Austen",
+        "avatars": "./images/janeausten.png",
+        "handle": "@JAusten" },
+        "content": {
+          "text": "It isn't what we say or think that defines us, but what we do."
+        },
+        "created_at": 1461113959088
+        }
+
+      
+      ]
+      
+      const renderTweets = function(tweets) {
+        
+        for (const tweet of tweets) {
+          const $tweetElement = createTweetElement(tweet);
+          $("#tweet-list").append($tweetElement);
+        }
+      }
+      
+      renderTweets(data);
 
 
+      /**
+       * Hover over tweet article and icons effect
+      */
+     
+     //select elements
+     const $tweetContainer = $('article');
+     const $tweetIcons = $('.icons i');
+     
+     //hover event handler for tweet article container
+     $tweetContainer.hover(
+        function() {
+          $(this).css('box-shadow', '4px 4px 4px');
+        },
+        function() {
+          $(this).css('box-shadow', 'none');
+        }
+        );
+        
+        //hover event handler for icons
+        $tweetIcons.hover(
+          function() {
+            $(this).css('color', '#D4A82A');
+          },
+          function() {
+            $(this).css('color', '#4056A1');
+          }
+          );
 
-
+    });
+    
+    
+    
+    
+    
+    
