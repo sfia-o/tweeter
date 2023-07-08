@@ -32,7 +32,7 @@ article.tweet header {
 .user-profile img {
   display: flex;
   justify-content: flex-start;
-  width: 10%;
+  width: 15%;
   margin-right: 1em;
 }
 
