@@ -10,19 +10,6 @@ $(document).ready(function() {
    * Create new tweet article
   */
  
-  //tweet object temporarily hard coded
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "./images/man2.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1688601411371
-  };
-  
   const createTweetElement = function(tweetData) {
     
     //html markup
@@ -39,7 +26,7 @@ $(document).ready(function() {
     <p class="message">${tweetData.content.text}</p>
     
     <footer>
-    <small id="timeago">${tweetData.created_at}</small>
+    <small id="timeago">${timeago.format(tweetData.created_at)}</small>
     
     <div class="icons">
     <i class="fa-solid fa-flag" style="color: #4056A1"></i>
@@ -59,14 +46,17 @@ $(document).ready(function() {
   */
      
   const renderTweets = function(tweets) {
-        
-    //loop through array
+    
+    // Empty the tweet list container before rendering
+    $("#tweet-list").empty();
+
+    //loop through array of tweets
     for (const tweet of tweets) {
       //pass each obj element through createTweetElement and assign it to variable
       const $tweetElement = createTweetElement(tweet);
       //append variable to #tweet-list html container
       $("#tweet-list").append($tweetElement);
-        
+      
         
       /**
        * Hover over tweet article and icons effect
@@ -95,6 +85,7 @@ $(document).ready(function() {
           $(this).css('color', '#4056A1');
         });
     }
+
   };
     
     
@@ -117,8 +108,8 @@ $(document).ready(function() {
       type: 'POST',
       url: 'http://localhost:8080/tweets',
       data: tweetText,
-      success: function(response) {
-        console.log(tweetText);
+      success: function() {
+        loadTweets();
       }
     });
   });
@@ -142,16 +133,6 @@ $(document).ready(function() {
   };
 
   loadTweets();
-
-  /**
-     * TimeAgo
-     */
-
-  // const timeAgo = $('#timeago');
-  // timeAgo().format(timeAgo);
-
-
-
 });
     
     
