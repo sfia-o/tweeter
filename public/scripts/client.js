@@ -92,8 +92,6 @@ $(document).ready(function() {
         },
         "created_at": 1461113959088
         }
-
-      
       ]
       
       const renderTweets = function(tweets) {
@@ -138,6 +136,11 @@ $(document).ready(function() {
           }
           );
 
+
+        /**
+       * Tweet Post Request
+       * */
+
       const $form = $('.form')
 
       $form.on('submit', function(event){
@@ -156,10 +159,27 @@ $(document).ready(function() {
           success: function(response) {
             console.log(tweetText);
           }
-        });
-
-     
+        });     
       })
+
+      /**
+       * Load tweets feed
+       */
+
+      const loadTweets = function() {
+
+        $.ajax({
+          type: 'GET',
+          url: 'http://localhost:8080/tweets',
+          sucess: (responseJSON) => {
+            console.log('Success here is the responde:', responseJSON);
+          },
+          error: (error) => {
+            console.log("There was an error:", error);
+          }
+        });
+      }
+
 
     });
     
