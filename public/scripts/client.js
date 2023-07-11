@@ -10,12 +10,12 @@ $(document).ready(function() {
    * Create new tweet article
   */
  
- //tweet object temporarily hard coded
- const tweetData = {
-   "user": {
-     "name": "Newton",
-     "avatars": "./images/man2.png",
-     "handle": "@SirIsaac"
+  //tweet object temporarily hard coded
+  const tweetData = {
+    "user": {
+      "name": "Newton",
+      "avatars": "./images/man2.png",
+      "handle": "@SirIsaac"
     },
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
@@ -39,7 +39,7 @@ $(document).ready(function() {
     <p class="message">${tweetData.content.text}</p>
     
     <footer>
-    <small>${tweetData.created_at}</small>
+    <small id="timeago">${tweetData.created_at}</small>
     
     <div class="icons">
     <i class="fa-solid fa-flag" style="color: #4056A1"></i>
@@ -58,94 +58,101 @@ $(document).ready(function() {
    * Render tweets
   */
      
-    const renderTweets = function(tweets) {
+  const renderTweets = function(tweets) {
         
-      //loop through array
-      for (const tweet of tweets) {
-        //pass each obj element through createTweetElement and assign it to variable
-        const $tweetElement = createTweetElement(tweet);
-        //append variable to #tweet-list html container
-        $("#tweet-list").append($tweetElement);
-      }
-    }
-
-
-    /**
-     * Hover over tweet article and icons effect
-    */
-     
-     //select elements
-     const $tweetContainer = $('article');
-     const $tweetIcons = $('.icons i');
-     
-     //hover event handler for tweet article container
-     $tweetContainer.hover(
+    //loop through array
+    for (const tweet of tweets) {
+      //pass each obj element through createTweetElement and assign it to variable
+      const $tweetElement = createTweetElement(tweet);
+      //append variable to #tweet-list html container
+      $("#tweet-list").append($tweetElement);
+        
+        
+      /**
+       * Hover over tweet article and icons effect
+      */
+             
+      //select elements
+      const $tweetContainer = $('article');
+      const $tweetIcons = $('.icons i');
+             
+      //hover event handler for tweet article container
+      $tweetContainer.hover(
         function() {
           $(this).css('box-shadow', '4px 4px 4px');
         },
         function() {
           $(this).css('box-shadow', 'none');
         }
-        );
-        
-        //hover event handler for icons
-        $tweetIcons.hover(
-          function() {
-            $(this).css('color', '#D4A82A');
-          },
-          function() {
-            $(this).css('color', '#4056A1');
-          }
-        );
-
-
-    /**
-    * Tweet Post Request
+      );
+                
+      //hover event handler for icons
+      $tweetIcons.hover(
+        function() {
+          $(this).css('color', '#D4A82A');
+        },
+        function() {
+          $(this).css('color', '#4056A1');
+        });
+    }
+  };
+    
+    
+  /**
+     * Tweet Post Request
      * */
 
-    const $form = $('.form')
+  const $form = $('.form');
 
-    $form.on('submit', function(event){
+  $form.on('submit', function(event) {
 
-      //prevent default action
-      event.preventDefault();
+    //prevent default action
+    event.preventDefault();
 
-       //create a variable to store the query string
-       const tweetText = $(this).serialize();
+    //create a variable to store the query string
+    const tweetText = $(this).serialize();
         
-       //post request
-       $.ajax({
-         type: 'POST',
-         url: 'http://localhost:8080/tweets',
-         data: tweetText,
-         success: function(response) {
-           console.log(tweetText);
-         }
-       });     
-    })
+    //post request
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:8080/tweets',
+      data: tweetText,
+      success: function(response) {
+        console.log(tweetText);
+      }
+    });
+  });
 
-    /**
+  /**
      * Load tweets feed
     */
 
-    const loadTweets = function() {
+  const loadTweets = function() {
 
-      $.ajax({
-        type: 'GET',
-        url: 'http://localhost:8080/tweets',
-        success: (responseJSON) => {
-           renderTweets(responseJSON);
-         },
-         error: (error) => {
-          console.log("There was an error:", error);
-         }
-       });
-     }
-
-    loadTweets();
-
-
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:8080/tweets',
+      success: (responseJSON) => {
+        renderTweets(responseJSON);
+      },
+      error: (error) => {
+        console.log("There was an error:", error);
+      }
     });
+  };
+
+  loadTweets();
+
+  /**
+     * TimeAgo
+     */
+
+  // const timeAgo = $('#timeago');
+  // timeAgo().format(timeAgo);
+
+
+
+});
     
     
     
