@@ -101,17 +101,23 @@ $(document).ready(function() {
     event.preventDefault();
 
     //create a variable to store the query string
-    const tweetText = $(this).serialize();
-        
-    //post request
-    $.ajax({
+    const tweetText = $(this).serialize()
+    
+    if (tweetText.trim() === "") {
+      alert('Invalid Input. The tweet must not be empty');
+    } else if (tweetText.length > 140) {
+      alert('Invalid input. Tweet must be under 140 characters long')
+    } else {        
+     //post request
+     $.ajax({
       type: 'POST',
       url: 'http://localhost:8080/tweets',
       data: tweetText,
       success: function() {
         loadTweets();
       }
-    });
+     });
+    }
   });
 
   /**
