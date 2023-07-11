@@ -53,64 +53,26 @@ $(document).ready(function() {
     return $tweet;
   };
   
-  
-  
+
   /**
    * Render tweets
   */
- 
- const data = [
-   {
-     "user": {
-       "name": "Newton",
-       "avatars": "./images/newton.png"
-       ,
-       "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "./images/descartes.png",
-        "handle": "@rd" },
-        "content": {
-          "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Austen",
-        "avatars": "./images/janeausten.png",
-        "handle": "@JAusten" },
-        "content": {
-          "text": "It isn't what we say or think that defines us, but what we do."
-        },
-        "created_at": 1461113959088
-        }
-      ]
-      
-      const renderTweets = function(tweets) {
+     
+    const renderTweets = function(tweets) {
         
-        //loop through array
-        for (const tweet of tweets) {
-          //pass each obj element through createTweetElement and assign it to variable
-          const $tweetElement = createTweetElement(tweet);
-          //append variable to #tweet-list html container
-          $("#tweet-list").append($tweetElement);
-        }
+      //loop through array
+      for (const tweet of tweets) {
+        //pass each obj element through createTweetElement and assign it to variable
+        const $tweetElement = createTweetElement(tweet);
+        //append variable to #tweet-list html container
+        $("#tweet-list").append($tweetElement);
       }
-      
-      renderTweets(data);
+    }
 
 
-      /**
-       * Hover over tweet article and icons effect
-      */
+    /**
+     * Hover over tweet article and icons effect
+    */
      
      //select elements
      const $tweetContainer = $('article');
@@ -134,51 +96,53 @@ $(document).ready(function() {
           function() {
             $(this).css('color', '#4056A1');
           }
-          );
+        );
 
 
-        /**
-       * Tweet Post Request
-       * */
+    /**
+    * Tweet Post Request
+     * */
 
-      const $form = $('.form')
+    const $form = $('.form')
 
-      $form.on('submit', function(event){
+    $form.on('submit', function(event){
 
-        //prevent default action
-        event.preventDefault();
+      //prevent default action
+      event.preventDefault();
 
-        //create a variable to store the query string
-        const tweetText = $(this).serialize();
+       //create a variable to store the query string
+       const tweetText = $(this).serialize();
         
-        //post request
-        $.ajax({
-          type: 'POST',
-          url: 'http://localhost:8080/tweets',
-          data: tweetText,
-          success: function(response) {
-            console.log(tweetText);
-          }
-        });     
-      })
+       //post request
+       $.ajax({
+         type: 'POST',
+         url: 'http://localhost:8080/tweets',
+         data: tweetText,
+         success: function(response) {
+           console.log(tweetText);
+         }
+       });     
+    })
 
-      /**
-       * Load tweets feed
-       */
+    /**
+     * Load tweets feed
+    */
 
-      const loadTweets = function() {
+    const loadTweets = function() {
 
-        $.ajax({
-          type: 'GET',
-          url: 'http://localhost:8080/tweets',
-          sucess: (responseJSON) => {
-            console.log('Success here is the responde:', responseJSON);
-          },
-          error: (error) => {
-            console.log("There was an error:", error);
-          }
-        });
-      }
+      $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/tweets',
+        success: (responseJSON) => {
+           renderTweets(responseJSON);
+         },
+         error: (error) => {
+          console.log("There was an error:", error);
+         }
+       });
+     }
+
+    loadTweets();
 
 
     });
