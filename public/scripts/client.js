@@ -5,6 +5,21 @@
  */
 
 $(document).ready(function() {
+  
+  /**
+   *  Cross Scripting
+   */
+  const escape = function (str) {
+
+    //Create new div
+    let div = document.createElement("div");
+
+    //Create a text node with the provided string
+    div.appendChild(document.createTextNode(str));
+
+    //Get the html content of the div, escaping special characters
+    return div.innerHTML;
+  };
 
   /**
    * Create new tweet article
@@ -12,6 +27,8 @@ $(document).ready(function() {
  
   const createTweetElement = function(tweetData) {
     
+    const safeHTML = `<p>${escape(tweetData.content.text)}</p>`;
+
     //html markup
     const $tweet = $(`
     <article class="tweet">
@@ -23,7 +40,7 @@ $(document).ready(function() {
     <h4 class="username">${tweetData.user.handle}</h4>
     </header>
     
-    <p class="message">${tweetData.content.text}</p>
+    <p class="message">${safeHTML}</p>
     
     <footer>
     <small id="timeago">${timeago.format(tweetData.created_at)}</small>
