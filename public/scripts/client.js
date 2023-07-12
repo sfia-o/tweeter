@@ -46,12 +46,14 @@ $(document).ready(function() {
   */
      
   const renderTweets = function(tweets) {
+
+    const reverseTweets = tweets.reverse();
     
     // Empty the tweet list container before rendering
     $("#tweet-list").empty();
 
     //loop through array of tweets
-    for (const tweet of tweets) {
+    for (const tweet of reverseTweets) {
       //pass each obj element through createTweetElement and assign it to variable
       const $tweetElement = createTweetElement(tweet);
       //append variable to #tweet-list html container
@@ -102,10 +104,11 @@ $(document).ready(function() {
 
     //create a variable to store the query string
     const tweetText = $(this).serialize()
-    
-    if (tweetText.trim() === "") {
+    const tweet = tweetText.slice(5)
+        
+    if (tweet.trim() === "") {
       alert('Invalid Input. The tweet must not be empty');
-    } else if (tweetText.length > 140) {
+    } else if (tweet.length > 140) {
       alert('Invalid input. Tweet must be under 140 characters long')
     } else {        
      //post request
