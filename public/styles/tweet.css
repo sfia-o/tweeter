@@ -20,6 +20,7 @@ article.tweet header {
   justify-content: space-between;
   align-items: center;
   margin: 1em;
+  margin-bottom: 0;
 }
 
 .user-profile {
@@ -48,6 +49,7 @@ article.tweet header {
 
 .message {
   margin: 1em;
+  margin-bottom: 0;
   font-weight: 600;
   padding-left: 1em;
   padding-right: 1em;
@@ -55,7 +57,7 @@ article.tweet header {
 
 footer {
   margin: 1em;
-  margin-top: 0.5em;
+  margin-top: 0;
   border-top: 4px solid #545149;
   padding: 0.5em;
   display: flex;

@@ -4,6 +4,7 @@
   justify-content: flex-start;
   flex-direction: column;
   margin-bottom: 5em;
+  margin-top: -2em;
  }
 
  .form {
@@ -28,12 +29,37 @@
   color: #f4f1ec;
   border: none;
  }
+ 
+ .new-tweet button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 4px 1px rgba(0, 0, 0, 1);
+  /* Lowering the shadow */
+ }
 
  .submit {
   display: flex;
   justify-content: space-between;
   margin-top: 1em;
   font-family: 'Bungee', cursive;
+ }
+
+#alert-short, #alert-long {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1.5em;
+  color: #c60b0b;
+  border: 1px solid #c60b0b;
+  background-color: #f5b5b5;
+  border-radius: 2em;
+  height: 2em;
+ }
+
+ .alert-icon {
+  height: 1em;
+  display: flex;
+
  }
 
 
