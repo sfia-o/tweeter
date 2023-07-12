@@ -27,7 +27,7 @@ $(document).ready(function() {
  
   const createTweetElement = function(tweetData) {
     
-    const safeHTML = `<p>${escape(tweetData.content.text)}</p>`;
+    const safeHTML = `<p class="message">${escape(tweetData.content.text)}</p>`;
 
     //html markup
     const $tweet = $(`
@@ -112,33 +112,43 @@ $(document).ready(function() {
      * Tweet Post Request
      * */
 
-  const $form = $('.form');
+  const $form = $('form');
 
   $form.on('submit', function(event) {
-
-    //prevent default action
+    // Prevent default action
     event.preventDefault();
 
-    //create a variable to store the query string
-    const tweetText = $(this).serialize()
-    const tweet = tweetText.slice(5)
-        
-    if (tweet.trim() === "") {
-      alert('Invalid Input. The tweet must not be empty');
+    // Create a variable to store the query string
+    const tweetText = $(this).serialize();
+    const tweet = tweetText.slice(5);
+
+    // Hide the alert elements before checking conditions
+    $('#alert-short').slideUp('slow');
+    $('#alert-long').slideUp('slow');
+
+    if (tweet.trim() === '') {
+      // Show the 'alert-short' element
+      $('#alert-short').slideDown('slow');
     } else if (tweet.length > 140) {
-      alert('Invalid input. Tweet must be under 140 characters long')
-    } else {        
-     //post request
-     $.ajax({
-      type: 'POST',
-      url: 'http://localhost:8080/tweets',
-      data: tweetText,
-      success: function() {
-        loadTweets();
-      }
-     });
+      // Show the 'alert-long' element
+      $('#alert-long').slideDown('slow');
+    } else {
+      // Hide both alert elements
+      $('#alert-short').slideUp('slow');
+      $('#alert-long').slideUp('slow');
+
+      // Post request
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/tweets',
+        data: tweetText,
+        success: function() {
+          loadTweets();
+        }
+      });
     }
   });
+
 
   /**
      * Load tweets feed
