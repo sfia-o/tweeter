@@ -41,9 +41,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-
-
-
+    
   </head>
 
   <body>
@@ -69,6 +67,16 @@
     <main id="container">
 
       <section class="new-tweet">
+        <div id="alert-short" style="display: none;">
+          <img class="alert-icon" src="images/alert.png"/>
+          <h4>This field cannot be empty.</h4>
+          <img class="alert-icon" src="images/alert.png"/>
+        </div>
+          <div id="alert-long" style="display: none;">
+            <img class="alert-icon" src="images/alert.png"/>
+            <h4>Your message is too long. Please respect the maximum of 140 characters.</h4>
+            <img class="alert-icon" src="images/alert.png"/>
+          </div>
           <form class="form" method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
