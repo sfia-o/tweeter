@@ -8,7 +8,7 @@
   width: 100%;
   height: 400px;
   background-color: #cdd7f7;
-  /* background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png"); */
+  /*Dont like the look of textures so commented it out: background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png"); */
   }
 
   .header-content {
@@ -31,7 +31,10 @@
   }
   
 
-  /* Media query for screens with width less than or equal to 1024px */
+  /* Media query for screens with width less than or equal to 2048px 
+          Note - had the compass 1024px but found that it was creating an awkward break point so
+          decided to change at a more natural looking break
+  */
   @media screen and (max-width: 2048px) {
     .profile-header {
       display: flex;
@@ -50,7 +53,7 @@
     }
   }
 
-  /* Media query for screens with width greater than 1024px */
+  /* Media query for screens with width greater than 2048px */
   @media only screen and (min-width: 2048px) {
 
     .profile-pic {

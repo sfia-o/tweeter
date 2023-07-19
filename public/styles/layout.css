@@ -62,6 +62,7 @@ body {
     margin-inline: 100px;
   }
 
+  /*Center content on wide screens*/
   .profile-header, #container {
     max-width: 1200px;
     }
