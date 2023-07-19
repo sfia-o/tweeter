@@ -33,9 +33,20 @@
 
   /* Media query for screens with width less than or equal to 1024px */
   @media screen and (max-width: 1024px) {
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
     .profile-pic {
       width: 20rem;
       margin-top: -17rem;
+    }
+
+    h2 {
+      text-align: center;
     }
   }
 
