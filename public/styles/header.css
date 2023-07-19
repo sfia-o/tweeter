@@ -22,18 +22,59 @@
   h2 {
     font-weight: normal;
     color: #545149;
-    font-size: 250%;
+    font-size: 3rem;
   }
 
   .profile-pic {
-    width: 20%;
+    width: 20rem;
     align-self: center;
     margin-top: -15%;
   }
+  
 
-  @media screen and (max-width: 1400px) {
+  /* Media query for screens with width less than or equal to 1024px */
+  @media screen and (max-width: 1024px) {
     .profile-pic {
-      width: 35%;
-      margin-top: -25%
+      width: 20rem;
+      margin-top: -17rem;
     }
   }
+
+
+  /* Media query for screens with width greater than 1024px */
+  @media only screen and (min-width: 1024px) {
+
+    .profile-pic {
+      width: 20rem;
+      margin-top: -200px;
+      align-self: center;
+    }
+
+    .profile-header-background {
+      display: none;
+    }
+  
+    .header-content {
+      display: flex;
+      width: 80%;
+      height: 100%;
+      margin-left: 100px;
+      margin-top: 100px;
+      }
+
+    .profile-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #cdd7f7;
+      width: 50rem;
+      height: 20rem;
+      margin-top: -20rem;
+      border-radius: 10px;
+    }
+
+    h2 {
+      align-self: center;
+    }
+   }
+  
