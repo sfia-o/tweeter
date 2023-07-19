@@ -31,11 +31,7 @@
   }
   
 
-  /* Media query for screens with width less than or equal to 2048px 
-          Note - had the compass 1024px but found that it was creating an awkward break point so
-          decided to change at a more natural looking break
-  */
-  @media screen and (max-width: 2048px) {
+  @media screen and (max-width: 1024px) {
     .profile-header {
       display: flex;
       flex-direction: column;
@@ -54,7 +50,8 @@
   }
 
   /* Media query for screens with width greater than 2048px */
-  @media only screen and (min-width: 2048px) {
+  @media only screen and (min-width: 1024px) {
+
 
     .profile-pic {
       width: 20rem;
@@ -68,7 +65,6 @@
   
     .header-content {
       width: 80%;
-      height: 100%;
       margin-left: 100px;
       margin-top: 300px;
       }
