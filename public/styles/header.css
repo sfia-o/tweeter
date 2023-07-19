@@ -1,6 +1,7 @@
 .profile-header {
   width: 100%;
   height: 600px;
+  display: block;
 }
 
 .profile-header-background {
@@ -13,9 +14,6 @@
   .header-content {
     height: 200px;
     background-color:  #f4f1ec;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: static;
   }
 
@@ -23,6 +21,7 @@
     font-weight: normal;
     color: #545149;
     font-size: 3rem;
+    align-self: center;
   }
 
   .profile-pic {
@@ -55,21 +54,19 @@
     }
   
     .header-content {
-      display: flex;
       width: 80%;
       height: 100%;
       margin-left: 100px;
-      margin-top: 100px;
+      margin-top: 300px;
       }
 
     .profile-box {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       background-color: #cdd7f7;
       width: 50rem;
       height: 20rem;
-      margin-top: -20rem;
       border-radius: 10px;
     }
 
