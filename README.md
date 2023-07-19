@@ -1,8 +1,15 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Welcome to the Tweeter Project, a simple and delightful single-page Twitter clone!
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Project Description
+Tweeter was created as part of the Lighthouse Bootcamp by Sofia Oliveira. Its main purpose is to showcase my front-end development skills and demonstrate my proficiency in web technologies.
+
+## Technologies Used
+For this project, I leveraged a combination of HTML, CSS, JavaScript, jQuery, and AJAX to build a basic yet engaging 'Twitter'-like interface. These technologies allowed me to craft a seamless and user-friendly experience.
+
+## Embracing Responsive Front-end Development
+One of the core aspects of this project was honing my skills in responsive front-end development. I made sure that the Tweeter interface adapts beautifully to various devices and screen sizes. Whether users access the application on their desktop or mobile devices, they can enjoy a consistent and visually appealing experience.
 
 <div style="align-self: center;">
     <div>
