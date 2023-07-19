@@ -30,3 +30,10 @@
     align-self: center;
     margin-top: -15%;
   }
+
+  @media screen and (max-width: 1400px) {
+    .profile-pic {
+      width: 35%;
+      margin-top: -25%
+    }
+  }
