@@ -23,3 +23,10 @@ nav {
   align-items: center;
  }
 
+
+ @media screen and (max-width: 1024px) {
+  nav {
+    background-color: #cdd7f7;
+  }
+}
+
