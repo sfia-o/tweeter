@@ -21,7 +21,8 @@
   border: none;
   background-color: #f4f1ec;
   border-bottom: 4px solid #545149;
-  padding: 0;   
+  padding: 0; 
+  overflow-wrap: break-word;  
  }
 
  .new-tweet button {
