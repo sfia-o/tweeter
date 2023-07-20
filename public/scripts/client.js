@@ -146,6 +146,9 @@ $(document).ready(function() {
           loadTweets();
         }
       });
+      
+      $('#tweet-text').val('');
+      
     }
   });
 
