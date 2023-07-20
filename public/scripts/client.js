@@ -145,9 +145,7 @@ $(document).ready(function() {
         url: 'http://localhost:8080/tweets',
         data: serializedData,
         success: function() {
-    
           loadTweets();
-
         },
         error: (error) => {
           console.log("There was an error:", error);
