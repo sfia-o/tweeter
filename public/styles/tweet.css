@@ -53,6 +53,7 @@ article.tweet header {
   font-weight: 600;
   padding-left: 1em;
   padding-right: 1em;
+  word-wrap: break-word;
 }
 
 footer {
