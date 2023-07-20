@@ -120,13 +120,13 @@ $(document).ready(function() {
 
     // Create a variable to store the query string
     const tweetText = $(this).serialize();
-    const tweet = tweetText.slice(5);
+    const tweet = tweetText.slice(5).trim();
 
     // Hide the alert elements before checking conditions
     $('#alert-short').slideUp('slow');
     $('#alert-long').slideUp('slow');
 
-    if (tweet.trim() === '') {
+    if (tweet === '') {
       // Show the 'alert-short' element
       $('#alert-short').slideDown('slow');
     } else if (tweet.length > 140) {
@@ -144,11 +144,13 @@ $(document).ready(function() {
         data: tweetText,
         success: function() {
           loadTweets();
+          $('#tweet-text').val('');
+        },
+        error: (error) => {
+          console.log("There was an error:", error);
         }
       });
-      
-      $('#tweet-text').val('');
-      
+         
     }
   });
 
